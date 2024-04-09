@@ -34,7 +34,7 @@ base = alt.Chart(stops_count).mark_line().encode(
     width=200,
     height=200
 ).facet(
-    column='CMPD_Division'
+    column=alt.Column('CMPD_Division:N', header=alt.Header(labelAngle=-90), columns=5)
 ).resolve_scale(y='independent')
 
 st.altair_chart(base, use_container_width=True)
