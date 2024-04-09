@@ -13,8 +13,8 @@ def load_data(csv):
 stops = load_data('data/Officer_Traffic_Stops.csv')
 
 ## Histogram
-age_hist = sns.histplot(stops, x='Driver_Age', kde=True, bins=20)
-age_hist.set_title('Distribution of Driver Age (bins: 20)')
+age_hist = sns.histplot(stops, x='Driver_Age', kde=True, bins=50)
+age_hist.set_title('Distribution of Driver Age (bins: 50)')
 age_hist.set_xlabel('Driver Age in Years')
 age_hist.set_xticks(range(0,100, 5))
 
