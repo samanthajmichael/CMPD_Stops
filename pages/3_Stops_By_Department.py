@@ -29,12 +29,12 @@ stops_count = stops_count.sort_values(by='Month_of_Stop', ascending=True)
 base = alt.Chart(stops_count).mark_line().encode(
     x=alt.X('Month_of_Stop:T', axis=alt.Axis(format='%b-%Y', title='Date of Stop', labelAngle=-90)),
     y=alt.Y('Count:Q', axis=alt.Axis(title='Number of Stops')),
-    color='CMPD_Division'
+    color=alt.Color('CMPD_Division', legend=None)
 ).properties(
-    width=200,
+    width='container',
     height=200
 ).facet(
-    column=alt.Column('CMPD_Division:N', header=alt.Header(labelAngle=-90), columns=5)
+    facet='CMPD_Division:N', columns=4
 ).resolve_scale(y='independent')
 
-st.altair_chart(base, use_container_width=True)
+st.altair_chart(base)
