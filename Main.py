@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 
-st.title('CMPD Traffic Stops')
+st.write('CMPD Traffic Stops')
 
 @st.cache_data
 def load_data(csv):
