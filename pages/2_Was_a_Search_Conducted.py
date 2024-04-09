@@ -4,7 +4,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import altair as alt
 
-st.title('CMPD Traffic Stops by Age')
+st.title('CMPD Searches Conducted')
 
 @st.cache_data
 def load_data(csv):
@@ -12,14 +12,6 @@ def load_data(csv):
     return df
 
 stops = load_data('data/Officer_Traffic_Stops.csv')
-
-## Boxplot
-age_box = sns.boxplot(stops, x='Was_a_Search_Conducted', y='Driver_Age', hue='Was_a_Search_Conducted')
-age_box.set_title('Boxplot: Was a Search Conducted & Age of Driver')
-age_box.set_xlabel('Was a Search Conducted: Y/N')
-age_box.set_ylabel('Age of Driver in Years')
-
-st.pyplot(age_box.get_figure())
 
 # Calculate the Search counts for yes and no
 search_counts = stops['Was_a_Search_Conducted'].value_counts().reset_index()
@@ -54,3 +46,11 @@ alt_search_text = alt_search.mark_text(
 
 alt_search_combined = alt.layer(alt_search, alt_search_text)
 st.altair_chart(alt_search_combined, use_container_width=True)
+
+## Boxplot
+age_box = sns.boxplot(stops, x='Was_a_Search_Conducted', y='Driver_Age', hue='Was_a_Search_Conducted')
+age_box.set_title('Boxplot: Was a Search Conducted & Age of Driver')
+age_box.set_xlabel('Was a Search Conducted: Y/N')
+age_box.set_ylabel('Age of Driver in Years')
+
+st.pyplot(age_box.get_figure())
