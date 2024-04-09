@@ -53,4 +53,4 @@ alt_search_text = alt_search.mark_text(
 )
 
 alt_search_combined = alt.layer(alt_search, alt_search_text)
-st.altair_chart(alt_search_combined)
+st.altair_chart(alt_search_combined, use_container_width=True)
