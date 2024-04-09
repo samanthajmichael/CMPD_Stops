@@ -12,10 +12,10 @@ def load_data(csv):
 
 stops = load_data('data/Officer_Traffic_Stops.csv')
 
-## Histogram
-age_hist = sns.histplot(stops, x='Driver_Age', kde=True, bins=50)
-age_hist.set_title('Distribution of Driver Age (bins: 50)')
-age_hist.set_xlabel('Driver Age in Years')
-age_hist.set_xticks(range(0,100, 5))
+## Boxplot
+age_box = sns.boxplot(stops, x='Was_a_Search_Conducted', y='Driver_Age')
+age_box.set_title('Boxplot: Was a Search Conducted & Age of Driver')
+age_box.set_xlabel('Was a Search Conducted: Y/N')
+age_box.set_ylabel('Age of Driver in Years')
 
 st.pyplot(age_hist.get_figure())
