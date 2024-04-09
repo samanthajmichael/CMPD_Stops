@@ -18,4 +18,4 @@ age_box.set_title('Boxplot: Was a Search Conducted & Age of Driver')
 age_box.set_xlabel('Was a Search Conducted: Y/N')
 age_box.set_ylabel('Age of Driver in Years')
 
-st.pyplot(age_hist.get_figure())
+st.pyplot(age_box.get_figure())
