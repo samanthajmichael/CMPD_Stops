@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
+import altair as alt
 
 st.title('CMPD Traffic Stops by Department')
 
