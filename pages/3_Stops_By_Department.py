@@ -11,6 +11,8 @@ def load_data(csv):
     return df
 
 stops = load_data('data/Officer_Traffic_Stops.csv')
+stops['Month_of_Stop'] = stops['Month_of_Stop'].astype('datetime64[ns]')
+stops['Month_of_Stop'] = pd.to_datetime(stops['Month_of_Stop'], format='%y%m%d')
 
 # Facet plot for division stops
 ## create the dataframe that groups by month and division
