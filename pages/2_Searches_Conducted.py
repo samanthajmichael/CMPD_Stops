@@ -21,7 +21,7 @@ search_counts.columns = ['Was_a_Search_Conducted', 'count']
 
 # Altair Bar Chart
 alt_search = (
-    alt.Chart(search_counts, title='Bar Chart of Searches Conducted')
+    alt.Chart(search_counts)
     .mark_bar()
     .encode(
         x=alt.X('Was_a_Search_Conducted', title='Search Conducted'),
@@ -49,7 +49,6 @@ st.altair_chart(alt_search_combined, use_container_width=True)
 
 ## Boxplot
 age_box = sns.boxplot(stops, x='Was_a_Search_Conducted', y='Driver_Age', hue='Was_a_Search_Conducted')
-age_box.set_title('Boxplot: Was a Search Conducted & Age of Driver')
 age_box.set_xlabel('Was a Search Conducted: Y/N')
 age_box.set_ylabel('Age of Driver in Years')
 

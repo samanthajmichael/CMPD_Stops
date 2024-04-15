@@ -31,10 +31,10 @@ base = alt.Chart(stops_count).mark_line().encode(
     y=alt.Y('Count:Q', axis=alt.Axis(title='Number of Stops')),
     color=alt.Color('CMPD_Division', legend=None)
 ).properties(
-    width='container',
+    width=200,
     height=200
 ).facet(
-    facet='CMPD_Division:N', columns=4
+    column='CMPD_Division'
 ).resolve_scale(y='independent')
 
 st.altair_chart(base)
